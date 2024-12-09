@@ -1,7 +1,8 @@
 '''Ex 01. Faça uma função "calcular_media" que recebe 3 numeros e retorna a média desses numeros.'''
 
     # Definindo a função
-def calcular_media(num1, num2, num3):
+def calcular_media(num1: float, num2: float, num3: float) -> float:
+    """Função feita para retornar a média aritmética entre 3 números flutuantes."""
     media = (num1 + num2 + num3) / 3
     return media
 
