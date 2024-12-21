@@ -79,7 +79,7 @@ while True:
         print()
         print(' SORTEIO '.center(40, '='))
         vencedor = sortear_clientes()
-        print(f'{cor["am"]}PO cliente sorteado é...{cor["no"]}P')
+        print(f'{cor["am"]}O cliente sorteado é...{cor["no"]}')
         sleep(2)
         print(f'Nome: {cor["vd"]}{vencedor["nome"]}{cor["no"]}\nTelefone: {cor["vd"]}{vencedor["tel"]}{cor["no"]} \nEndereço: {cor["vd"]}{vencedor["endereco"]}{cor["no"]}')
         print('-' * 40)
