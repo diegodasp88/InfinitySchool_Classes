@@ -31,12 +31,12 @@ print(f'A média entre as notas {notas} é {media:.2f}.')
 
 # 4 - Faça um Programa que leia um vetor de 10 caracteres, e diga quantas consoantes foram lidas. Imprima as consoantes.
 '''
-lista = ['a', 'r', 'd', 's', 'y', 'i', 'o', 'x', 'q', 'e']
-consoantes = 0
-for letra in lista:
-    if letra not in 'aeiou':
-        consoantes += 1
-print(f'Na lista {lista} há {consoantes} consoantes.')
+frase = input('Digite uma frase: ').lower()
+consoante = 0
+for letra in frase:
+    if letra in 'aeiou':
+        consoante += 1
+print(f'Na frase "{frase}" há {consoante} consoantes.')
 '''
 
 
