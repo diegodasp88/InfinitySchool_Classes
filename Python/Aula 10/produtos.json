@@ -1,0 +1,14 @@
+{
+    "produtos": {
+        "1": {
+            "Nome": "Caneta",
+            "Pre\u00e7o": 5.8,
+            "Descri\u00e7\u00e3o": "Caneta de ponta fina 0.5mm"
+        },
+        "2": {
+            "Nome": "Lapiseira",
+            "Pre\u00e7o": 4.5,
+            "Descri\u00e7\u00e3o": "Lapiseira 0.5mm"
+        }
+    }
+}
