@@ -16,44 +16,62 @@
 #     e depositar na conta que for passada como parametro
 
 class Conta:
+    # Metódo Construtor
     def __init__(self, titular: str, saldo: float = 0):
+        if saldo < 0:
+            raise ValueError('O saldo deve ser zerado ou positivo.')
+
         self.titular = titular
         self.saldo = saldo
+    
+    def saldo_formatado(self) -> str:
+        valor = str(round(self.saldo, 2)).replace('.', ',')
+        return f'R$ {valor}'
 
     def depositar(self, valor: float):
+        if valor <= 0:
+            raise ValueError('O valor de deposíto deve ser positivo.')
+
         self.saldo += valor
-        print(f'Seu saldo atual é R${self.saldo}')
 
     def sacar(self, valor: float):
-        if self.saldo > valor:
-            self.saldo -= valor
-            print(f'Seu saldo atual é R${self.saldo}')
-        else:
-            raise ValueError('Saldo insuficiente para saque.')
+        if valor <= 0:
+            raise ValueError('O valor de saque deve ser positivo.')
+        
+        if self.saldo < valor:
+            raise ValueError('O valor de saque não pode ser maior que o saldo.')
 
-    def transferir(self, valor: float, conta_destino: 'Conta'):
-        if self.saldo > valor:
-            self.saldo -= valor
-            print(f'Seu saldo atual é R${self.saldo}')
-            conta_destino.saldo += valor
-            print(f'O saldo atual da conta {conta_destino.titular} é R${self.saldo}')
-        else:
-            raise ValueError('Saldo insuficiente para transferência.')    
+        self.saldo -= valor
 
-conta1 = Conta('Diego DASP')
-conta2 = Conta('Diego Perez')
+    def transferir(self, valor: float, conta: 'Conta'):
+        self.sacar(valor)
+        conta.depositar(valor)
 
-# Depositando valor:
-deposito = float(input('Valor a depositar: R$')) 
-conta1.depositar(deposito)
-
-# Sacando valor:
-saque = float(input('Valor a sacar: R$'))
-conta1.sacar(saque)
-
-# Transferindo valor:
-transf = float(input('Valor a transferir:'))
-conta_destino = Conta()
+    def __str__(self):
+        return f'{self.titular} - {self.saldo_formatado()}'
 
 
+# Exemplo de Utilização com Input.
+# print('Cadastro Banco Infinity.')
+# titular = input('Digite o titular da conta: ')
 
+# conta = Conta(titular)
+
+# valor_deposito = float(input('Quanto deseja depositar? '))
+# conta.depositar(valor_deposito)
+# print(f'Saldo da Conta: {conta.saldo_formatado()}')
+
+# valor_saque = float(input('Quanto deseja sacar? '))
+# conta.sacar(valor_saque)
+# print(f'Saldo da Conta: {conta.saldo_formatado()}')
+
+c1 = Conta('Diego', 100)
+c2 = Conta('Daiana', 30)
+
+print(c1)
+print(c2)
+
+c1.transferir(80, c2)
+
+print(c1.saldo_formatado())
+print(c2.saldo_formatado())
