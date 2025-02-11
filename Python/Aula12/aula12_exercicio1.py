@@ -44,7 +44,7 @@ class Vendedor(Funcionario):
         super().__init__(nome, salario)
         self.comissao = comissao
     
-    def calcular_salario(self, comissao: float) -> float:
+    def calcular_salario(self) -> float:
         imposto = 0.08
         return self.salario * (1 - imposto) + comissao
     
