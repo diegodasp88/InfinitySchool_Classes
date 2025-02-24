@@ -85,8 +85,7 @@ class BancoDePessoas:
                 print(f'Nome: {self.pessoa.nome}')
                 print(f'Data de nascimento: {self.pessoa.data_nascimento}')
                 print(f'endereco: {self.pessoa.endereco.formatar()}')
-            else:
-                raise ValueError(f'{nome} não cadastrado.')
+        return None
 
     def remover_pessoa_pelo_nome(self, nome: str):
         for self.pessoa in self.pessoas:
@@ -99,8 +98,7 @@ class BancoDePessoas:
                 if conf == 's':
                     self.pessoas.remove(self.pessoa)
                     print(f'{nome} foi removido(a).')
-            else:
-                raise ValueError('Pessoa não cadastrada.')
+        return None
             
 
 
