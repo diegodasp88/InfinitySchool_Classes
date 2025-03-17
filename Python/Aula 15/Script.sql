@@ -33,7 +33,7 @@ SELECT id, nome, registro FROM professores;
 -- Inserir valores em uma tabela
 INSERT INTO alunos (nome, cpf, data_nascimento)
 VALUES ('Diego', '12345678900', '1988-11-02'),
-	   ('Tulio', '11122233344', '1998-03-11');
+       ('Tulio', '11122233344', '1998-03-11');
 
 -- Deletar valores de uma tabela
 DELETE FROM alunos 
