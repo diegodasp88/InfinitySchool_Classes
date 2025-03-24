@@ -1,69 +1,84 @@
 from db import conn
-import os
 
 
 def listar_materias():
     cursor = conn.cursor()
-    sql = """
-    SELECT id, nome, sigla, descricao
-    FROM materias
-    """
+
+    sql = '''
+        SELECT id, nome, sigla, descricao
+        FROM materias 
+    '''
+
     cursor.execute(sql)
     dados = cursor.fetchall()
+    
     cursor.close()
     return dados
 
-def buscar_materia_por_sigla():
+def buscar_materia_pela_sigla(sigla: str):
     cursor = conn.cursor()
-    sql = """
-    SELECT id, nome, sigla, descricao
-    FROM materias
-    WHERE sigla = ?
-    """
-    cursor.execute(sql, (nome, ))
-    dados = cursor.fetchall()
-    cursor.close()
-    return dados
 
+    sql = '''
+        SELECT id, nome, sigla, descricao
+        FROM materias 
+        WHERE sigla = ?
+    '''
+
+    cursor.execute(sql, (sigla,))
+    dado = cursor.fetchone()
+
+    cursor.close()
+    return dado
 
 def cadastrar_materia(nome: str, sigla: str, descricao: str | None = None):
     cursor = conn.cursor()
-    sql = """
-    INSERT INTO materias (nome, sigla, descricao)
-    VALUES (?, ?, ?)
-    """
-    cursor.execute(sql, (nome, sigla, descricao))   # Os parâmetros para serem preenchidos são informados dentre parênteses.
-    dados = cursor.fetchall()
-    cursor.close()
-    conn.commit()   # Obrigatório para persistir os dados. Para que de fato os dados sejam adicionados lá no banco de dados.
 
+    sql = '''
+        INSERT INTO materias (nome, sigla, descricao)
+        VALUES (?, ?, ?)
+    '''
+
+    cursor.execute(sql, (nome, sigla, descricao))
+    
+    cursor.close()
+    conn.commit() # Obrigatório para Persistir os Dados
 
 def menu():
     while True:
-        os.system("clear")
-        print(" M E N U ".center(40, "-"))
-        print("[1] Listar matérias")
-        print("[2] Cadastrar matérias")
-        print("[3] Voltar")
-        print("-"*40)
-        opcao = input("Digite a opção: ").strip()
-        print("-"*40)
+        print(' Gerenciar Matérias '.center(30, '='))
+        print('[1] - Listar Matérias')
+        print('[2] - Cadastrar Matéria')
+        print('[3] - Voltar')
+        print('=' * 30)
 
-        if opcao == "1":
+        resp = input('Selecione uma opção: ')
+
+        if resp == '1':
             materias = listar_materias()
+
             for id, nome, sigla, _ in materias:
-                print(f"{id} - {nome} ({sigla})")
+                print(f'{id} - {nome} ({sigla})')
+        elif resp == '2':
+            nome = input('Digite o nome da matéria: ')
+            sigla = input('Digite a sigla da matéria: ')
 
-        elif opcao == "2":
-            materia = input("Nome da matéria: ").strip()
-            sigla = input("Sigla da matéria: ").strip()
-            descricao = input("Descrição: ").strip()
-            if descricao == "":
-                descricao = None
+            materia = buscar_materia_pela_sigla(sigla)
 
-        elif opcao == "3":
+            
+            if materia is not None:
+                print('Já existe uma materia com essa sigla.')
+                continue
+
+            descricao = input('Descrição (Opcional): ')
+            descricao = descricao if descricao.strip() != '' else None
+
+            cadastrar_materia(nome, sigla, descricao)
+            print('Materia Cadastrada com Sucesso!')
+        elif resp == '3':
             break
+        else:
+            print('Opção Inválida!')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     menu()
