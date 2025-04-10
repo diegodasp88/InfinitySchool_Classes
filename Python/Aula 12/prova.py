@@ -11,3 +11,13 @@ class Carro(Veiculo):
 class Moto(Veiculo):    
     def movimentar(self):
         print("Moto está acelerando.")
+
+
+veiculo = Veiculo()
+veiculo.movimentar()
+
+carro = Carro()
+carro.movimentar()
+
+moto = Moto()
+moto.movimentar()
