@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela</title>
+</head>
+<body>
+    
+    <h1>Tabela</h1>
+    <p>Criando uma tabela exemplo:</p>
+
+    <table border="1">
+        <tr> <!-- table row // linha 1 -->
+            <td>nome</td> <!-- table data // coluna 1 -->
+            <td>idade</td> <!-- table data // coluna 2 -->
+            <td>profissão</td> <!-- table data // coluna 3 -->
+        </tr>
+        <tr> <!-- table row // linha 2 -->
+            <td>Diego</td> <!-- table data // coluna 1 -->
+            <td>36</td> <!-- table data // coluna 2 -->
+            <td>Desenvolvedor Full-Stack</td> <!-- table data // coluna 3 -->
+        </tr>
+    </table>
+
+    <h2>Tags para tabelas</h2>
+    <ul>
+        <li><strong>thead:</strong> Cabeçalho da tabela -> contém títulos de colunas.</li>
+        <li><strong>tbody:</strong> Corpo da tabela -> onde os dados principais são armazenados.</li>
+        <li><strong>tfoot:</strong> Rodapé da tabela -> usado para resumir ou fornecer informações
+        adicionais.</li>
+        <li><strong>tr:</strong> table row -> linha da tabela</li>
+        <li><strong>td:</strong> table data -> célula de dados da tabela.</li>
+        <li><strong>th:</strong> table header -> célula de cabeçalho da tabela</li>
+        
+    </ul>
+
+    <hr>
+
+    <h2>Exercício</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Marca</th>
+                <th>Ano</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Volkswagen</td>
+                <td>Golf</td>
+                <td>2009</td>
+                <td>R$38.500</td>
+            </tr>
+            <tr>
+                <td>Fiat</td>
+                <td>Palio</td>
+                <td>2010</td>
+                <td>R$19.750</td>
+            </tr>
+            <tr>
+                <td>Honda</td>
+                <td>Civic</td>
+                <td>2012</td>
+                <td>R$61.500</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">O melhor preço da região.</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>
