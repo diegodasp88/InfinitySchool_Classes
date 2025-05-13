@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Exemplo de CSS Position</title>
+</head>
+<body>
+    <h1>Exemplos de CSS Position</h1>
+    
+    <div class="container">
+        <h2>Position: Static</h2>
+        <p>Este é o valor padrão. Os elementos são posicionados de acordo com o fluxo normal da página.</p>
+        <div class="static-box">Static</div>
+    </div>
+    
+    <div class="container">
+        <h2>Position: Relative</h2>
+        <p>Os elementos são posicionados em relação à sua posição original no fluxo normal da página.</p>
+        <div class="relative-box">Relative</div>
+    </div>
+    
+    <div class="container">
+        <h2>Position: Absolute</h2>
+        <p>Os elementos são posicionados em relação ao seu contêiner mais próximo com `position: relative`, `absolute` ou `fixed`.</p>
+        <div class="absolute-box-container">
+            <div class="absolute-box">Absolute</div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h2>Position: Fixed</h2>
+        <p>Os elementos são posicionados em relação à janela de visualização e não se movem quando a página é rolada.</p>
+        <div class="fixed-box">Fixed</div>
+    </div>
+    
+    <div class="container" id="sticky-div">
+        <h2>Position: Sticky</h2>
+        <p>Os elementos se comportam como `relative` até que rolem para um ponto especificado, onde então se comportam como `fixed`.</p>
+        <div class="sticky-box">Sticky</div>
+    </div>
+    
+    <p>Role a página para ver o comportamento do elemento sticky.</p>
+    
+</body>
+</html>
+  
