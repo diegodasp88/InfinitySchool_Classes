@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center; /*Só funciona no body se ele tiver altura.*/
+            height: 100vh /*viewport height: % tamanho da visão da tela.*/
+        }
+
+        .caixa{
+            display: flex;
+            justify-content: center; /*Alinha conteúdo horizontalmente*/
+            align-items: center; /*Alinha conteúdo verticalmente*/
+
+            background-color: red;
+            width: 250px;
+            height: 250px;
+            border: 5px solid black;
+        }
+
+        p{
+            color: white;
+            font-size: 36pt;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="caixa">
+        <p>texto</p>
+    </div>
+
+</body>
+</html>
