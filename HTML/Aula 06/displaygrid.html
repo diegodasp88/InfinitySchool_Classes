@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display grid</title>
+
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .caixa{
+            display: flex;
+            /* Para alinhar horizontalmente */
+            justify-content: space-around;
+            /* Para alinhar de maneira vertical */
+            align-items: center;
+            background-color: red;
+            border: 2px solid black;
+            width: 250px;
+            height: 250px;
+        }
+
+        p{
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="caixa">
+        <p>Texto</p>
+        <p>Texto</p>
+        <p>Texto</p>
+    </div>
+
+</body>
+</html>
