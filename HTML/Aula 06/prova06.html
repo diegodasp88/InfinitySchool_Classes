@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 06 HTML</title>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            height: 100vh;
+            background-color: #E7EFC7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .titulo{
+            color: #8A784E;
+            text-align: center;
+            margin: 10px;
+        }
+        .conteiner{
+            background-color: #AEC8A4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: #8A784E 5px solid;
+            border-radius: 15px;
+        }
+        div{
+            margin: 5px;
+        }
+        label{
+            font-weight: bold;
+            font-size: 12pt;
+            display: inline-block;
+            width: 150px;
+            color: #3B3B1A;
+        }
+        input{
+            font-size: 12pt;
+            padding: 8px;
+            color: #8A784E;
+            border: #8A784E 2px solid;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px #3B3B1A ;
+        }
+        #usuario::before{
+            content: "👤";
+        }
+        #senha::before{
+            content: "🔒";
+        }
+        button{
+            background-color: #3B3B1A;
+            color: white;
+            font-weight: bold;
+            padding: 8px;
+            margin: 5px;
+            border-radius: 10px;
+            width: 100px;
+        }
+        button:hover{
+            background-color: #8A784E;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px){
+            div{
+                margin: 10px;
+            }
+            .conteiner{
+                width: 100vw;
+                height: auto;
+            }
+            input{
+                width: 95vw;
+            }
+        }
+
+        @media (min-width: 600px) and (max-width: 768px){
+            .conteiner{
+                width: 600px;
+                height: 200px;
+            }
+            input{
+                width: 300px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .conteiner{
+                width: 800px;
+                height: 200px;
+            }
+            input{
+                width: 500px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <form action="">
+        <div class="titulo"><h1>Login</h1></div>
+        <div class="conteiner">
+            <div id="usuario">
+                <label for="user">Nome do usuário:</label>
+                <input type="text" id="user" name="user" placeholder="Usuário">
+            </div>
+            <div id="senha">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" placeholder="Senha">
+            </div>
+            <div>
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </div>        
+    </form>
+
+</body>
+</html>
