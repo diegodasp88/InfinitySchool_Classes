@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 07 HTML</title>
+
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        :root{
+            --font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-h1: 2rem;
+            --font-h2: 1.5rem;
+            --font-p: 1rem;
+            --color1: #8E1616;
+            --color2: #E8C999;
+            --color3: #F8EEDF;            
+            --spacing-small: 10px;
+            --spacing-medium: 15px;
+            --spacing-large: 20px;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header{
+            background-color: black;
+            padding: 15px;
+            color: var(--color2);
+            font-family: var(--font-family);
+            text-align: center;
+        }
+        nav{
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+        a{
+            background-color: var(--color1);
+            border: var(--color2) 2px solid;
+            border-radius: 8px;
+            padding: 5px;
+            color: var(--color2);
+            text-decoration: none;
+        }
+        a:hover{
+            background-color: var(--color2);
+            color: var(--color1);
+            border: var(--color1) 2px solid;
+            font-weight: bold;
+        }
+        main{
+            margin: 10px;
+            font-family: var(--font-family);
+            flex: 1;
+        }
+        section{
+            margin-top: 10px;
+            scroll-margin-top: 100px;
+        }
+        img{
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        h1{
+            font-size: var(--font-h1);
+        }
+        h2{
+            background-color: var(--color2);
+            padding: var(--spacing-small);
+            font-size: var(--font-h2);
+        }
+        p{
+            padding: var(--spacing-small);
+            font-size: var(--font-p);
+        }
+        span{
+            color: red;
+        }
+        ul{
+            margin-left: 20px;
+            padding: var(--spacing-small);
+        }
+        li{
+            font-size: var(--font-p);
+        }
+        footer{
+            background-color: black;
+            font-family: var(--font-family);
+            color: white;
+            padding: 5px;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            :root {
+                --font-h1: 20pt;
+                --font-h2: 14pt;
+                --font-p: 10pt;
+
+                --spacing-small: 8px;
+                --spacing-medium: 12px;
+                --spacing-large: 16px;
+            }
+        }
+
+        @media (min-width: 600px) and (max-width: 768px) {
+            :root {
+                --font-h1: 24pt;
+                --font-h2: 18pt;
+                --font-p: 12pt;
+
+                --spacing-small: 9px;
+                --spacing-medium: 14px;
+                --spacing-large: 18px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            :root {
+                --font-h1: 36pt;
+                --font-h2: 20pt;
+                --font-p: 14pt;
+
+                --spacing-small: 12px;
+                --spacing-medium: 20px;
+                --spacing-large: 30px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Universo do Baralho</h1>
+        <nav>
+            <a href="#historia">História</a>
+            <a href="#estrutura">Estrutura</a>
+            <a href="#jogos">Jogos Populares</a>
+            <a href="#curiosidades">Curiosidades</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="historia">
+        <h2>♥️ História do Baralho</h2>
+        <p>O baralho tem origens milenares. Acredita-se que ele tenha surgido na China, evoluindo a partir dos jogos de papel por volta do século IX. Posteriormente, o conceito se espalhou pelo Oriente Médio e Europa, ganhando a forma que conhecemos hoje com 52 cartas divididas em 4 naipes.</p>
+        </section>
+
+        <section id="estrutura">
+        <h2>♠️ Estrutura de um Baralho</h2>
+        <p>Um baralho padrão contém 52 cartas, divididas em quatro naipes: <span>copas ♥</span>, <span>ouros ♦</span>, paus ♣ e espadas ♠. Cada naipe contém 13 cartas, numeradas de 2 a 10, além das cartas de figura: valete (J), dama (Q), rei (K) e o ás (A). Baralhos também podem conter curingas (jokers), usados em alguns jogos específicos.</p>
+        </section>
+
+        <section id="jogos">
+        <h2>♦️ Jogos Populares com Baralho</h2>
+        <p>Entre os jogos mais conhecidos com baralho estão o Pôquer, Truco, Buraco, Canastra, Blackjack (21), e Paciência. Cada jogo tem suas próprias regras e níveis de estratégia, e muitos envolvem elementos de sorte e habilidade.</p>
+        </section>
+
+        <section id="curiosidades">
+        <h2>♣️ Curiosidades</h2>
+        <ul>
+            <li>As 52 cartas representam as 52 semanas do ano.</li>
+            <li>Os quatro naipes simbolizam as quatro estações.</li>
+            <li>A soma de todas as cartas (com ás = 1, valete = 11, dama = 12 e rei = 13) totaliza 364 — quase o número de dias do ano.</li>
+            <li>O baralho francês é o mais comum no mundo ocidental.</li>
+        </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Universo do Baralho. Criado para fins educativos.</p>
+    </footer>
+</body>
+</html>
