@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfólio - Diego De Angelis Souza Perez</title>
+  <style>
+    *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    :root{
+        --corbgmain: #1C1F26;
+        --cordestaque: #007ACC;
+        --cortitulos: #F0F4F8;
+        --corleitura: #C0C8D0;
+        --cordetalhes: #4A90E2;
+    }
+
+    body{
+        background-color: black;
+    }
+
+    header nav{
+        background-color: var(--cordestaque);
+        width: 100%;
+        padding: 10px;
+        position: fixed;
+        top: 0;
+    }
+
+    header nav div#nome{
+        color: var(--cortitulos);
+        text-align: center;
+        text-shadow: #1C1F26 2px 2px 4px;
+    }
+
+    header nav div#menu{
+        display: flex;
+        background-color: var(--cordetalhes);
+    }
+
+    header nav div a#botoesmenu{
+        color: var(--cortitulos);
+        font-weight: bold;
+    }
+
+    main section{
+        border: var(--cordestaque) 2px solid;
+        background-color: var(--corbgmain);
+    }
+
+    main section h2{
+        background-color: var(--cordestaque);
+        padding: 5px;
+        color: var(--cortitulos);
+    }
+
+    main section h3{
+        background-color: var(--cordetalhes);
+        padding: 5px;
+        color: var(--corleitura);
+        margin-bottom: 10px;
+    }
+
+    section p{
+        color: var(--corleitura);
+        padding-bottom: 10px;
+    }
+
+    hr{
+        border: var(--cordestaque) 1px solid;
+        margin-bottom: 10px;
+    }
+
+    figcaption a{
+        text-decoration: underline;
+        color: var(--cordetalhes);
+        font-weight: bold;
+    }
+
+    article p{
+        font-weight: bold;
+        color: var(--cordetalhes);
+    }
+
+    article p a{
+        color: var(--cortitulos);
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+
+    form div{
+        padding-bottom: 8px;
+    }
+
+    form div label{
+        color: var(--cordetalhes);
+        font-weight: bold;
+        padding-right: 10px;
+    }
+
+    form button{
+        background-color: var(--cordestaque);
+        padding: 5px;
+        font-weight: bold;
+        color: var(--corleitura);
+    }
+
+    footer{
+        background-color: var(--cordestaque);
+        font-weight: bold;
+        color: var(--cortitulos);
+        text-align: center;
+    }
+
+    /* Smartphones: até 600px */
+    @media (max-width: 600px) {
+        header nav div#nome{
+           font-size: 1.5rem; 
+           padding-bottom: 10px;
+        }
+        header nav div#menu{
+            padding: 5px;
+            justify-content: space-evenly;
+        }
+        main.container {
+            padding-top: 90px;
+            padding-bottom: 1rem;
+        }
+        img.profile {
+            max-width: 200px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+        main section{
+            padding: 10px;
+            margin: 15px;
+            scroll-margin-top: 105px;
+        }
+        h2 {
+            font-size: 1.3rem;
+        }
+        h3 {
+            font-size: 1rem;
+        }
+        .figure img {
+            max-width: 100%;
+            border-radius: 15px;
+        }
+        .grid {
+            display: block;
+        }
+        form div input{
+            width: 80%;
+            font-size: 1rem;
+        }
+        footer{
+            padding: 10px;
+            font-size: 0.8rem;
+        }
+    }
+
+    /* Tablets: de 600px a 768px */
+    @media (min-width: 600px) and (max-width: 768px) {
+        header nav div#nome{
+           font-size: 2.5rem; 
+           padding-bottom: 10px;
+        }
+        header nav div#menu{
+            padding: 5px;
+            justify-content: space-evenly;
+        }
+        main.container {
+            padding-top: 115px;
+            padding-bottom: 1rem;
+        }
+        img.profile {
+            max-width: 200px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+        main section{
+            padding: 10px;
+            margin: 15px;
+            scroll-margin-top: 130px;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        .figure img {
+            max-width: 100%;
+            height: 400px;
+            border-radius: 15px;
+        }
+        .grid {
+            display: block;
+        }
+        form div input{
+            width: 88%;
+            font-size: 1rem;
+        }
+        button{
+            width: 30%;
+            font-size: 1rem;
+        }
+        footer{
+            padding: 10px;
+        }
+    }
+
+    /* Desktops: a partir de 1024px */
+    @media (min-width: 1024px) {
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+        header nav div#nome{
+           font-size: 3rem; 
+           padding-bottom: 10px;
+        }
+        header nav div#menu{
+            display: none;
+        }
+        main.container {
+            padding-top: 100px;
+            padding-bottom: 1rem;
+        }
+        main section{
+            padding: 10px;
+            margin: 15px;
+        }
+        img.profile {
+            max-width: 200px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        img.profile {
+            max-width: 250px;
+        }
+        .figure img {
+            max-width: 100%;
+            height: 280px;
+            border-radius: 15px;
+        }
+        form div input{
+            width: 30%;
+            font-size: 1rem;
+        }
+        footer{
+            padding: 10px;
+        }
+        button{
+            width: 10%;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <nav class="menu">
+            <div id="nome">
+                <strong>Diego De Angelis Souza Perez</strong>
+            </div>
+            <div id="menu">
+                <a href="#sobre" id="botoesmenu">Sobre</a>
+                <a href="#projetos" id="botoesmenu">Projetos</a>
+                <a href="#contato" id="botoesmenu">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <div class="grid">
+
+            <section id="sobre">
+                <h2>Sobre Mim</h2>
+                <h3>Estudante de Programação Full Stack e Auxiliar de Contabilidade</h3>
+                <img src="photo.jpeg" alt="Foto de perfil de Diego Perez" class="profile">
+                <p>Natural de Belo Horizonte, nascido em 2 de novembro de 1988, sou um estudante dedicado e entusiasta da tecnologia, atualmente em busca de ampliar meus conhecimentos e experiências na área de programação.</p>
+                <p>Minha trajetória educacional começou com a conclusão do ensino médio em 2006. Em 2008, iniciei minha primeira graduação na Faculdade Estácio de Sá, no curso de Redes de Computadores, onde me destaquei em lógica de programação com C++ e MySQL.</p>
+                <p>Tenho experiência com inglês, adquirida ao longo dos anos por meio de cursos como Etimig, Cultura Inglesa, Minds Idiomas e Fluency Academy, além de práticas diárias com amigos, jogos, músicas e filmes.</p>
+                <p>Atuei também na área de design gráfico após um curso na Seven Computação Gráfica e desenvolvi conhecimentos sobre investimentos na Bolsa de Valores e no Forex. Trabalho há 16 anos no escritório AW2 Contabilidade e Sistema Ltda, onde criei soluções de automação com Excel e Google Sheets. Atualmente, curso Programação Full Stack com foco em IA pela Infinity School.</p>
+
+                <h3>Habilidades Técnicas</h3>
+                <p>Python, MySQL, HTML, CSS, JavaScript (início), Automação de Planilhas no Excel e Google Sheets.</p>
+
+                <h3>Experiência Profissional</h3>
+                <p>AW2 Contabilidade e Sistema Ltda (2009 - atual): Experiência em contabilidade e desenvolvimento de soluções automatizadas com planilhas.</p>
+            </section>
+
+            <section id="projetos">
+                <div>
+                    <h2>Projetos</h2>
+                    <h3>Alguns dos projetos que desenvolvi</h3>
+                </div>
+
+                <div class="figure">
+                    <img src="themanorofwhispers.jpg" alt="Projeto The Manor of Whispers" class="imgproject">
+                    <figcaption><a href="https://github.com/diegodasp88/TheManorOfWhispers" target="_blank">The Manor of Whispers</a></figcaption>
+                </div class="figure">
+                <p>Um projeto amador focado em criar uma página de internet usando Python e a biblioteca Streamlit, com o objetivo de praticar conceitos aprendidos em sala de aula.</p>
+                <hr>
+                <div class="figure">
+                    <img src="hotelapp.png" alt="Projeto Hotel App">
+                    <figcaption><a href="https://github.com/diegodasp88/hotel_app" target="_blank">Hotel App</a></figcaption>
+                </div class="figure">
+                <p>Software amador desenvolvido em Python com a biblioteca Flet para interface gráfica. Projeto voltado para o gerenciamento de dados (CRUD) de clientes, quartos e reservas de um hotel.</p>
+            </section>
+
+        </div>
+
+        <section id="contato">
+            <article>
+                <div>
+                    <h2>Entre em Contato</h2>
+                    <h3>Redes sociais e formulário de contato</h3>
+                </div>
+                <p>Instagram: <a href="http://www.instagram.com/@diegodasp" target="_blank">@diegodasp</a></p>
+                <p>GitHub: <a href="http://github.com/diegodasp88" target="_blank">github.com/diegodasp88</a></p>
+
+                <form>
+                    <div>
+                        <label for="firstname">Nome:</label>
+                        <input type="text" id="firstname" name="firstname" placeholder="Seu Nome" required>
+                    </div>
+                    <div>
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" placeholder="Seu E-mail" required>
+                    </div>                        
+                    <button type="submit">Enviar Mensagem</button>
+                </form>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>©Copyright 2025 - Todos os direitos reservados</p>
+    </footer>
+
+</body>
+</html>
