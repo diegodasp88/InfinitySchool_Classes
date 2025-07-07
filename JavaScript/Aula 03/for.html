@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03 - For</title>
+</head>
+<body>
+    <script>
+        for(let i = 0; i < 3; i += 1){
+            let nome = prompt("Digite seu nome: ")
+            let senha = prompt("Digite sua senha: ")
+            if(nome == "admin" && senha == "1234"){
+                console.log("Seja bem-vindo!")
+                break
+            } else {
+                console.log("Nome ou senha incorretos. Tente novamente")
+            }
+        }
+    </script>
+</body>
+</html>
