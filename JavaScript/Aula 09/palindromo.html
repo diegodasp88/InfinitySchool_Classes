@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindromo/title>
+</head>
+<body>
+
+    <script>
+        // Crie uma função eh_palindromo que recebe uma string e retorna True se ela for um palíndromo (ou seja, se pode ser lida da mesma forma de trás para frente EXEMPLO NATAN), e False caso contrário.
+
+        let frase = prompt("Digite uma palavra: ").toLowerCase()
+
+        function ehPalindromo(frase){
+            let fraseInvertida = ""
+            
+            for(let i = frase.length - 1; i >= 0; i--){
+                fraseInvertida += frase[i]
+            }
+
+            return fraseInvertida
+        }
+
+        console.log(ehPalindromo(frase) === frase)
+
+    </script>
+    
+</body>
+</html>
