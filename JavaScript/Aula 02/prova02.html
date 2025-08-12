@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Prova 02</title>
+</head>
+<body>
+    <script>
+        let idade = Number(prompt("Digite sua idade: "));
+        let status = prompt("Status (registrado/não registrado): ");
+
+        switch (status){
+            case "registrado":
+                console.log("Seja bem-vindo!");
+                break;
+            case "não registrado":
+                console.log("Favor completar o registro.");
+                break;
+            default:
+                console.log("Status desconhecido.")
+        }
+
+        if (idade >= 18 && status === "registrado"){
+            console.log("Acesso completo!")
+        } else if (idade < 18 || status === "não registrado"){
+            console.log("Acesso limitado!")
+        }
+    </script>
+</body>
+</html>
