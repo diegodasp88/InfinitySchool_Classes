@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Prova 03</title>
+</head>
+<body>
+    <script>
+        let nomes = []
+
+        while (true) {
+            let nome = prompt("Digite um nome ou 'sair' para encerrar: ")
+
+            if(nome.toLowerCase() === "sair"){
+                break;
+            }
+
+            nomes.push(nome);
+        }
+
+        for (let i = 0; i < nomes.length; i++) {
+            console.log(`${i + 1}: ${nomes[i]}`) // i+1 para que não comece com 0
+        }
+
+        for (nome of nomes) {
+            console.log(`Seja bem-vindo(a) ${nome}`)
+        }
+    </script>
+</body>
+</html>
