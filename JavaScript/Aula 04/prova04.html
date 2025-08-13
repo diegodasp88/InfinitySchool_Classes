@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Prova 04</title>
+</head>
+<body>
+    <script>
+
+    let listaCompras = []
+
+    while (true) {
+        let opcao = Number(prompt(
+            "LISTA DE COMPRAS:\n\n" +
+            "(1) ✳️ Adicionar item\n" +
+            "(2) ⛔ Remover item\n" +
+            "(3) 🧾 Exibir lista\n" +
+            "(4) 🔄 Atualizar item\n" +
+            "(5) 🚪 Sair\n \n" +
+            "Digite o número da opção desejada: "
+        ))
+
+        if (opcao === 1) {
+            let item = prompt("Digite o nome do item a ser adicionado: ")
+            if (item){
+                listaCompras.push(item)
+                alert("✅ Item adicionado!")
+            }
+        } else if (opcao === 2) {
+            let indice = prompt("Digite o índice no item a ser removido: ")
+            if (indice >= 0 && indice < listaCompras.length) {
+                listaCompras.splice(indice, 1)
+                alert("✅ Item removido!")
+            } else {
+                alert("⚠️ Índice inválido!")
+            }
+        } else if (opcao === 3) {
+            let textoLista = "Lista de Compras:\n"
+            let i = 0
+            for (let item of listaCompras) {
+                textoLista += `${i} - ${item}\n`
+                i++
+            }
+            alert(textoLista + `\nQuantidade de itens: ${listaCompras.length}`);
+        } else if (opcao === 4) {
+            let indice = Number(prompt("Digite o índice do item a ser atualizado: "))
+            if (indice >= 0 && indice < listaCompras.length) {
+                let novoItem = prompt("Digite o nome do novo item:")
+                listaCompras[indice] = novoItem
+                alert("✅ Item atualizado!")
+            } else {
+                alert("⚠️ Índice inválido!")
+            }
+        } else if (opcao === 5) {
+            break; // Sair do programa
+        } else {
+            alert("⚠️ Opção inválida!");
+        }
+    }
+
+    </script>
+</body>
+</html>
