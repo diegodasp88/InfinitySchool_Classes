@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .caixa{
+            width: 250px;
+            height: 250px;
+            border: 2px solid black;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="caixa" 
+        id="caixa" 
+        onclick="mudarCor('green')"
+        onmouseenter="mudarCor('yellow')"
+        onmouseleave="mudarCor('black')"> 
+    </div>
+
+    <p id="paragrafo" onclick="mudarTexto()">
+        Este texto estava aqui.
+    </p>
+
+
+    <script>
+        function mudarCor(cor) {
+            // Identificar e selecionar elementos
+            let caixa = document.querySelector("#caixa")
+            caixa.style.background = cor
+        }
+
+        function mudarTexto(){
+            let paragrafo = document.querySelector("#paragrafo")
+            paragrafo.textContent = "Texto mudado pelo JavaScript."
+        }
+    </script>
+  
+</body>
+</html>

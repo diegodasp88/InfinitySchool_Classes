@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Cadastro de usuários</h1>
+    <input type="text" placeholder="Digite o seu nome" id="nome" >
+    <button onclick="cadastrar()">Cadastrar</button>
+    <ul id="lista"></ul>
+
+    <script>
+        let usuarios = []
+
+        function cadastrar(){
+            let nome = document.querySelector("#nome")
+            console.log(nome.value)
+            usuarios.push(nome.value)
+            console.log(usuarios)
+            listarUsuarios()
+        }
+
+        function listarUsuarios(){
+            const lista = document.querySelector("#lista");
+            lista.innerHTML = "" 
+            for (nome of usuarios) {
+                lista.innerHTML += `<li> ${nome} </li>` 
+            }
+        }
+    </script>
+</body>
+</html>

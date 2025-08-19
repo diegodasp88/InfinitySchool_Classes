@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    <img src="https://fernandoleonid.github.io/mini-projetos-js/01-lamp/img/desligada.jpg" alt="" id="lampada" onmouseenter="turnOn()" onmouseleave="turnOff()">
+
+    <script>
+        let lampada = document.querySelector("#lampada")
+
+        function turnOn(){
+            lampada.src = "https://fernandoleonid.github.io/mini-projetos-js/01-lamp/img/ligada.jpg";
+        }
+
+        function turnOff(){
+            lampada.src = "https://fernandoleonid.github.io/mini-projetos-js/01-lamp/img/desligada.jpg";
+        }
+    </script>
+</body>
+</html>

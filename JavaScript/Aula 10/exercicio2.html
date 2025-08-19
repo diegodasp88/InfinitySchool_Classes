@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <img src="https://fernandoleonid.github.io/mini-projetos-js/01-lamp/img/desligada.jpg" alt="" id="lampada" onclick="turnOnOff()">
+
+    <script>
+        let lampada = document.querySelector("#lampada")
+
+        function turnOnOff(){
+            if (lampada.src == lampadaApagada){
+                lampada.src = lampadaAcesa;
+            } else {
+                lampada.src = lampadaApagada;
+            }
+        }
+
+        const lampadaAcesa = "https://fernandoleonid.github.io/mini-projetos-js/01-lamp/img/ligada.jpg";
+        const lampadaApagada = "https://fernandoleonid.github.io/mini-projetos-js/01-lamp/img/desligada.jpg";
+    </script>
+</body>
+</html>
