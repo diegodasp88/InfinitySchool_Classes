@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Prova 05</title>
+</head>
+<body>
+    <script>
+        let listaTarefas = []
+        let rodando = true // programa rodando
+
+        while (rodando) {
+            let opcao = Number(prompt(
+            "LISTA DE TAREFAS:\n\n" +
+            "(1) ✳️ Adicionar tarefa\n" +
+            "(2) ⛔ Remover tarefa\n" +
+            "(3) 🧾 Listar tarefas\n" +
+            "(4) ✅ Concluir tarefa\n" +
+            "(5) 🚪 Sair\n \n" +
+            "Digite o número da opção desejada: "
+            ))
+
+            switch (opcao) {
+                case 1:
+                    let tarefa = prompt(
+                        "✳️ ADICIONAR TAREFA: \n\n" +
+                        "Digite uma tarefa: "
+                    )
+                    if (tarefa) {
+                        listaTarefas.push(tarefa)
+                        alert("✅ Tarefa adicionada com sucesso!")
+                    }
+                    break;
+
+                case 2:
+                    let indice = Number(prompt(
+                        "⛔ REMOVER TAREFA: \n\n" +
+                        "Digite o índice da tarefa a ser removida: "
+                    ))
+                    if (indice >= 0 && indice < listaTarefas.length) {
+                        listaTarefas.splice(indice, 1)
+                        alert("✅ Tarefa removida com sucesso!")
+                    } else {
+                        alert("⚠️ Índice inválido!")
+                    }
+                    break;
+                
+                case 3:
+                    if (listaTarefas.length === 0) {
+                        alert("🧾 LISTAR TAREFAS:\n\n" +
+                        "⚠️ Nenhuma tarefa cadastrada!")
+                    } else {
+                        let texto = "🧾 LISTAR TAREFAS: \n\n"
+                        let i = 0   // contador de tarefas
+                        for (let tarefa of listaTarefas) {
+                            texto += `${i} - ${tarefa} \n`
+                            i++
+                        }
+                        alert(texto)
+                    }
+                    break;
+
+                case 4:
+                    let indiceConcluir = Number(prompt(
+                        "✅ CONCLUIR TAREFA: \n\n" +
+                        "Digite o índice da tarefa a ser concluída: "
+                    ))
+                    if (indiceConcluir >= 0 && indiceConcluir < listaTarefas.length) {
+                        tarefaConcluida = listaTarefas[indiceConcluir]
+                        listaTarefas[indiceConcluir] = `✅ ${tarefaConcluida}`
+                        alert("✅ Tarefa concluída com sucesso!")
+                    } else {
+                        alert("⚠️ Índice inválido!")
+                    }
+                    break;
+
+                case 5:
+                    alert("👋 Saindo do programa...")
+                    rodando = false
+                    break;
+
+                default:
+                    alert("⚠️ Opção inválida!")
+            }
+        }
+    </script>
+</body>
+</html>
