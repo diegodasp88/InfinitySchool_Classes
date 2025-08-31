@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Prova 06</title>
+</head>
+<body>
+    <script>
+        let listaTarefas = []
+
+        let adicionar = function(tarefa){
+            if(tarefa){
+                listaTarefas.push(tarefa)
+                alert("✅ Tarefa adicionada com sucesso!")
+            } else {
+                alert("⚠️ Favor, digite uma tarefa.")
+            }            
+        }
+
+        let listar = () => {
+            if (listaTarefas.length === 0) {
+                alert("🧾 LISTAR TAREFAS:\n\n" +
+                "⚠️ Nenhuma tarefa cadastrada!")
+            } else {
+                let texto = "🧾 LISTAR TAREFAS: \n\n"
+                let i = 1
+                for (let tarefa of listaTarefas) {
+                    texto += `${i} - ${tarefa} \n`
+                    i++
+                }
+                alert(texto)
+            }
+        }
+
+        function processar(callback) {
+            callback()
+        }
+
+        function remover() {
+            let indice = Number(prompt(
+                "⛔ REMOVER TAREFA: \n\n" +
+                "Digite o número da tarefa a ser removida: "
+            ))
+            if (indice >= 0 && (indice - 1) < listaTarefas.length) {
+                listaTarefas.splice((indice - 1), 1)
+                alert("✅ Tarefa removida com sucesso!")
+            } else {
+                alert("⚠️ Número inválido!")
+            }
+        }
+
+        function atualizar() {
+            let indice = Number(prompt(
+                "🔃 ATUALIZAR TAREFA: \n\n" +
+                "Digite o número da tarefa a ser atualizada: "
+            ))
+            if (indice >= 0 && (indice - 1) < listaTarefas.length) {
+                let novaTarefa = prompt("Digite a nova tarefa:")
+                listaTarefas[(indice - 1)] = novaTarefa
+                alert("✅ Tarefa atualizada com sucesso!")
+            } else {
+                alert("⚠️ Número inválido!")
+            }
+        }
+
+        function concluir() {
+            let numero = Number(prompt(
+                "✅ CONCLUIR TAREFA: \n\n" +
+                "Digite o número da tarefa a ser concluída: "
+            ))
+            if ((numero - 1) >= 0 && (numero - 1) < listaTarefas.length) {
+                tarefaConcluida = listaTarefas[(numero - 1)]
+                listaTarefas[(numero - 1)] = `✅ ${tarefaConcluida}`
+                alert("✅ Tarefa concluída com sucesso!")
+            } else {
+                alert("⚠️ Índice inválido!")
+            }
+        }
+
+        let rodando = true
+
+        while (rodando) {
+            let opcao = Number(prompt(
+            "LISTA DE TAREFAS:\n" +
+            "(1) ✳️ Adicionar tarefa\n" +
+            "(2) 🧾 Listar tarefas\n" +
+            "(3) ⛔ Remover tarefa\n" +
+            "(4) 🔃 Atualizar tarefa\n" +
+            "(5) ✅ Concluir tarefa\n" +
+            "(6) 🚪 Sair\n \n" +
+            "Digite o número da opção desejada: "
+            ))
+
+            switch (opcao) {
+                case 1:
+                    let tarefa = prompt(
+                        "✳️ ADICIONAR TAREFA: \n\n" +
+                        "Digite uma tarefa: "
+                    )
+                    adicionar(tarefa)
+                    break;
+
+                case 2:
+                    listar()
+                    break;
+
+                case 3:
+                    processar(remover)
+                    break;
+                
+
+                case 4:
+                    processar(atualizar)
+                    break;
+
+                case 5:
+                    processar(concluir)
+                    break;
+
+                case 6:
+                    alert("👋 Saindo do programa...")
+                    rodando = false
+                    break;
+
+                default:
+                    alert("⚠️ Opção inválida!")
+            }
+        }
+    </script>
+</body>
+</html>
