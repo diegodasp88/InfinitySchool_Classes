@@ -12,24 +12,18 @@
         let adicionar = function(tarefa){
             if(tarefa){
                 listaTarefas.push(tarefa)
-                alert("✅ Tarefa adicionada com sucesso!")
+                console.log("✅ Tarefa adicionada com sucesso!")
             } else {
-                alert("⚠️ Favor, digite uma tarefa.")
+                console.log("⚠️ Favor, digite uma tarefa.")
             }            
         }
 
         let listar = () => {
+            console.log("\n\n🧾 LISTAR TAREFAS:")
             if (listaTarefas.length === 0) {
-                alert("🧾 LISTAR TAREFAS:\n\n" +
-                "⚠️ Nenhuma tarefa cadastrada!")
+                console.log("⚠️ Nenhuma tarefa cadastrada!")
             } else {
-                let texto = "🧾 LISTAR TAREFAS: \n\n"
-                let i = 1
-                for (let tarefa of listaTarefas) {
-                    texto += `${i} - ${tarefa} \n`
-                    i++
-                }
-                alert(texto)
+                listaTarefas.forEach((tarefa, numero) => console.log(`${(numero + 1)}. ${tarefa}`))
             }
         }
 
@@ -44,9 +38,9 @@
             ))
             if (indice >= 0 && (indice - 1) < listaTarefas.length) {
                 listaTarefas.splice((indice - 1), 1)
-                alert("✅ Tarefa removida com sucesso!")
+                console.log("✅ Tarefa removida com sucesso!")
             } else {
-                alert("⚠️ Número inválido!")
+                console.log("⚠️ Número inválido!")
             }
         }
 
@@ -58,9 +52,9 @@
             if (indice >= 0 && (indice - 1) < listaTarefas.length) {
                 let novaTarefa = prompt("Digite a nova tarefa:")
                 listaTarefas[(indice - 1)] = novaTarefa
-                alert("✅ Tarefa atualizada com sucesso!")
+                console.log("✅ Tarefa atualizada com sucesso!")
             } else {
-                alert("⚠️ Número inválido!")
+                console.log("⚠️ Número inválido!")
             }
         }
 
@@ -72,9 +66,9 @@
             if ((numero - 1) >= 0 && (numero - 1) < listaTarefas.length) {
                 tarefaConcluida = listaTarefas[(numero - 1)]
                 listaTarefas[(numero - 1)] = `✅ ${tarefaConcluida}`
-                alert("✅ Tarefa concluída com sucesso!")
+                console.log("✅ Tarefa concluída com sucesso!")
             } else {
-                alert("⚠️ Índice inválido!")
+                console.log("⚠️ Índice inválido!")
             }
         }
 
@@ -119,12 +113,12 @@
                     break;
 
                 case 6:
-                    alert("👋 Saindo do programa...")
+                    console.log("👋 Saindo do programa...")
                     rodando = false
                     break;
 
                 default:
-                    alert("⚠️ Opção inválida!")
+                    console.log("⚠️ Opção inválida!")
             }
         }
     </script>
