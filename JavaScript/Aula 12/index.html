@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            margin: 20px;
+        }
+        #tarefa{
+            padding: 5px;
+            font-size: medium;
+        }
+        #botao, #local{
+            padding: 5px;
+        }
+        #li{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Lista de tarefas</h1>
+
+    <input type="text" name="tarefa" id="tarefa">
+    <button id="botao" onclick="adicionarTarefa()">Adicionar Tarefa</button>
+   
+    <ul id="lista"></ul>
+
+    <script>
+
+        let arrayTarefas = JSON.parse(localStorage.getItem("tarefas")) ?? []
+        let tarefa = document.querySelector("#tarefa")
+        let lista = document.querySelector("#lista")
+
+        function adicionarTarefa() {
+            arrayTarefas.push(tarefa.value)
+            console.log(arrayTarefas)
+            localStorage.setItem("tarefas", JSON.stringify(arrayTarefas))
+            carregarTarefa()
+        }
+
+        function carregarTarefa() {
+            lista.innerHTML = ""
+            arrayTarefas.forEach(element => {
+                lista.innerHTML += `<li> ${element} </li>`
+            });
+        }
+
+    </script>
+
+</body>
+</html>
