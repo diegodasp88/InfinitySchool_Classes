@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Prova 07</title>
+</head>
+<body>
+    <script>
+        listaNomes = []
+
+        function processar(callback) {
+            callback()
+        }
+
+        function adicionar() {
+            let novoNome = prompt(
+                "ADICIONAR NOMES \n\n" +
+                "Digite um nome: "
+            )
+            if(novoNome) {
+                listaNomes.push(novoNome)
+                console.log("🧾 LISTA DE NOMES: \n\n" + listaNomes)
+            } else {
+                console.log("⚠️ Favor, digite um nome para ser adicionado.")
+            }
+        }
+
+        function filtrar() {
+            let letra = prompt(
+                "FILTRAR NOMES POR LETRA: \n\n" +
+                "Informe a letra: "
+            )
+            if(letra) {
+                let filtro = listaNomes.filter((nome) => {
+                    return nome.toUpperCase().includes(letra.toUpperCase())
+                })
+                if(filtro.length > 0) {
+                    console.log(`FILTRAR NOMES PELA LETRA '${letra.toUpperCase()}': \n\n` + 
+                    "✅ Nomes encontrados: \n" + filtro
+                )
+                } else {
+                    console.log("FILTRAR POR LETRA: \n\n" + 
+                    "⚠️ Nenhum nome encontrado com a letra: " + letra
+                )
+                }
+            } else {
+                console.log("FILTRAR POR LETRA: \n\n" + "⚠️ Favor, digite uma letra.")
+            }
+        }
+
+        function buscar() {
+            let buscaNome = prompt(
+                "BUSCAR NOME ESPECÍFICO: \n\n" +
+                "Digite um nome:"
+            )
+            if(buscaNome) {
+                let nomeEspecifico = listaNomes.find((nome) => {
+                    return nome.toLowerCase() === buscaNome.toLowerCase()
+                })
+                if(nomeEspecifico) {
+                    console.log(
+                        `BUSCA PELO NOME ${buscaNome.toUpperCase()}: \n\n` + 
+                        `✅ Há o nome ${nomeEspecifico} na lista.`
+                    )
+                } else {
+                    console.log(`BUSCA PELO NOME ${buscaNome.toUpperCase()}: \n\n` + 
+                    "⛔ Esse nome não está na lista."
+                )
+                }                
+            } else {
+                console.log("BUSCA POR NOME: \n\n" + "⚠️ Favor, digite um nome.")
+            }
+        }
+
+        function transformar() {
+            if(listaNomes.length > 0){
+                let listaMaiuscula = listaNomes.map((nome) => {
+                    return nome.toUpperCase()
+                })
+                console.log("TRANSFORMAR EM MAIÚSCULO: \n\n" + listaMaiuscula)
+            } else {
+                console.log("TRANSFORMAR EM MAIÚSCULO: \n\n" + "⚠️ Não há nenhum nome na lista.")
+            }
+        }
+
+        function verificar() {
+            if(listaNomes.length > 0){
+                let verifica = listaNomes.every((nome) => {
+                    return nome.length > 3
+                })
+                console.log(
+                    "VERIFICAÇÃO: \n\nTodos os nomes possuem mais de 3 caracteres? " + 
+                    verifica
+                )
+            } else {
+                console.log("VERIFICAÇÃO: \n\n" + "⚠️ Não há nenhum nome na lista.")
+            }
+        }
+        
+        let rodando = true
+
+        while(rodando){
+            let opcao = Number(prompt(
+                "LISTA DE NOMES: \n" +
+                "[1] Adicionar nomes \n" +
+                "[2] Filtrar nomes \n" +
+                "[3] Buscar nome específico \n" +
+                "[4] Transformar nomes \n" +
+                "[5] Verificar condições \n" +
+                "[0] Sair \n\n" +
+                "Digite sua opção:"
+            ))
+
+            switch(opcao) {
+                case 1:
+                    processar(adicionar)
+                    break;
+                
+                case 2:
+                    processar(filtrar)
+                    break;
+
+                case 3:
+                    processar(buscar)
+                    break;
+
+                case 4:
+                    processar(transformar)
+                    break;
+
+                case 5:
+                    processar(verificar)
+                    break;
+
+                case 0:
+                    console.log("👋 Saindo do programa...")
+                    rodando = false
+                    break;
+
+                default:
+                    console.log("⚠️ Opção inválida!")
+            }
+        }
+    </script>
+</body>
+</html>
