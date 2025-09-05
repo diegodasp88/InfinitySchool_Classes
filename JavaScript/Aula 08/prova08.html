@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Prova 08</title>
+</head>
+<body>
+    <script>
+        // Objetos literais em JavaScript são estruturas de dados 
+        // que permitem armazenar pares de chave-valor.
+
+        const aluno = {
+            nome: "Diego",
+            notas: [8,9,10],
+            calcularMedia: function() {
+                let soma = this.notas.reduce((acc, num) => {
+                    return acc + num
+                }, 0)
+                return soma / this.notas.length
+            }
+        }
+
+        let {nome, notas} = aluno  // desconstrução
+        console.log("Nome do aluno: " + nome)
+        console.log("Notas: " + notas)
+        console.log("Média do aluno: " + aluno.calcularMedia())
+
+        aluno.notas = [...notas, 8]  // adicionando uma nova nota
+        console.log("Notas atualizadas: " + aluno.notas)
+        console.log("Nova média do aluno: " + aluno.calcularMedia())
+
+    </script>
+</body>
+</html>
