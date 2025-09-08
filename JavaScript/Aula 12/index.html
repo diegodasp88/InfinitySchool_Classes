@@ -36,7 +36,11 @@
     <ul id="lista"></ul>
 
     <script>
-
+        // Local Storage:
+        // Armazena informações como "objeto" do tipo JSON (String)
+        
+        // getItem: pegar informações do Local Storage
+        // JSON.parse: transformar JSON (string) em objeto (chave, valor)
         let arrayTarefas = JSON.parse(localStorage.getItem("tarefas")) ?? []
         let tarefa = document.querySelector("#tarefa")
         let lista = document.querySelector("#lista")
@@ -44,6 +48,8 @@
         function adicionarTarefa() {
             arrayTarefas.push(tarefa.value)
             console.log(arrayTarefas)
+            // setItem: inserir informações no Local Storage
+            // JSON.stringify: transformar o objeto em JSON (string)
             localStorage.setItem("tarefas", JSON.stringify(arrayTarefas))
             carregarTarefa()
         }
