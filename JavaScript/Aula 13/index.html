@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamento de erros</title>
+</head>
+<body>
+    <script>
+
+        try{ // try: tentar executar algo
+            let usuario = JSON.parse('{"nome":}')
+        } catch(error) { // catch: o que fazer caso dê erro
+            console.log("Ocorreu o seguinte erro: " + error.message)
+        } finally { // finally: é executado de qualquer forma, dando erro ou nâo
+            console.log("Finalizado!")
+        }
+
+        try{
+            let numero1 = 5
+            let numero2 = 0
+            let resultado = 5/0
+            if(numero1 || numero2 == 0) {
+                throw new Error("Não há divisão por 0.")
+            }
+        } catch(e) {
+            console.log(e.message)
+        }
+
+    </script>
+</body>
+,
+</html>
