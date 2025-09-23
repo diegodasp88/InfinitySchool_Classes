@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loja Virtual</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-cabecalho">
+        <h1>Minha Loja Virtual</h1>
+      </div>
+      <div class="barra-pesquisa">
+        <input type="text" placeholder="Pesquisar itens..." />
+        <button>Buscar</button>
+      </div>
+      <button class="botao-adicionar-produto" onclick="abrirFormulario()">
+        Adicionar Produto
+      </button>
+    </header>
+
+    <main class="grade-itens">
+      
+    </main>
+
+    <!-- Modal de Cadastro de Produto -->
+    <div id="modalCadastroProduto" class="modal">
+      <div class="conteudo-modal">
+        <span class="botao-fechar" onclick="fecharFormulario()">&times;</span>
+        <h2>Adicionar Produto</h2>
+          <label for="nomeProduto">Nome do Produto:</label>
+          <input type="text" id="nomeProduto" name="nomeProduto" required />
+
+          <label for="precoProduto">Preço:</label>
+          <input type="text" id="precoProduto" name="precoProduto" required />
+
+          <label for="imagemProduto">URL da Imagem:</label>
+          <input type="url" id="imagemProduto" name="imagemProduto" required />
+
+          <button type="button" onclick="cadastrarProdutos()">Cadastrar</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
