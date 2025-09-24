@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify - Simple Plan</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h1>Spotify</h1>
+      <a href="#">Início</a>
+      <a href="#">Buscar</a>
+      <a href="#">Sua Biblioteca</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="artist-header">
+        <img
+          src="https://akamai.sscdn.co/uploadfile/letras/fotos/e/b/a/4/eba4a19af58a5c05d70c1ba8d9151496.jpg"
+          alt="Simple Plan"
+        />
+        <div>
+          <h2>Simple Plan</h2>
+          <div class="buttons">
+            <a href="#">Play</a>
+            <a href="#">Seguir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Track Button -->
+      <div class="buttons" id="cadastrar">
+        <a href="#" id="openModalBtn">Cadastrar Nova Música</a>
+      </div>
+
+      <!-- Tracks List -->
+      <table class="track-list">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Faixa</th>
+            <th>Streams</th>
+            <th>Duração</th>
+            <th colspan="2">Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td class="faixa">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/en/e/e9/I%27mjustakid.jpeg"
+                alt="Faixa 1"
+              />
+              <div>I'm Just a Kid</div>
+            </td>
+            <td>198123123</td>
+            <td>3:18</td>
+            <td><a href="#" class="play-button">▶</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Modal for adding track -->
+    <div class="modal" id="addTrackModal">
+      <div class="modal-content">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <h3>Cadastrar Nova Música</h3>
+
+        <input type="text" id="trackName" placeholder="Nome da Música" required />
+        <input type="text" id="trackDuration" placeholder="Duração" required />
+        <input type="number" id="trackStreams" placeholder="Streams" required />
+        <input type="text" id="trackImage" placeholder="Imagem" required />
+        <button type="button" onclick="addTrack()">Cadastrar</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
