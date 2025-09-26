@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Final JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Zen+Dots&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="leftBorderTitle"></div>
+        <div class="middleBorderTitle">
+            <h1>To-Do List</h1>
+        </div>
+        <div class="rightBorderTitle"></div>
+    </header>
+    
+
+    <nav>
+        <button id="openModalBtn" onclick="openForm()">Add new task</button>
+    </nav>
+    
+
+    <main class="mainContent">
+        <div id="listContent">
+            <div id="taskContent">
+                <p id="idTask">1</p>
+                <p id="textTask">teste</p>
+                <p id="statusTask">Pending</p>
+                <button type="button" id="doneBtn">Done</button>
+                <button type="button" id="deleteBtn">Delete</button>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Add Task Modal  -->
+    <div id="modalAddTask" class="modal">
+        <div id="modalContent">
+            <h2>Add new task</h2>
+            <input type="text" name="newTask" id="newTask" required />
+            <button type="button" onclick="addTask()">+</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+        
+</body>
+</html>
