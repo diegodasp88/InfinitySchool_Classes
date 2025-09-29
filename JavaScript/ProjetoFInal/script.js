@@ -42,7 +42,9 @@ async function listTasks() {
           </div>
       `;
 
-        listContent.innerHTML += listContentStructure;
+      listContent.innerHTML += listContentStructure;
+      const textTask = document.querySelector("#newTask");
+      textTask.value = ""
   });
 }
 
